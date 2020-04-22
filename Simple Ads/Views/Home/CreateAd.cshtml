@@ -1,0 +1,20 @@
+﻿@using SimpleAds.Models;
+@model AdViewModel
+<div class=" well col-md-6 col-md-offset-3">
+    <form method="post" action="/home/createad">
+        <div class="row">
+            <input type="text" placeholder="Title" name="title" class="form-control" required />
+        </div>
+        <div class="row" style="margin-top:15px">
+            <input type="tel" placeholder="Number" name="number" class="form-control" required />
+        </div>
+        <div class="row" style="margin-top:15px">
+            <input type="text" placeholder="description" name="description" class="form-control" required />
+        </div>
+        <input type="hidden" name="useremail" value="@Model.email" />
+        <div class="row" style="margin-top:15px">
+            <button class="btn btn-primary">Create Ad</button>
+        </div>
+    </form>
+
+</div>

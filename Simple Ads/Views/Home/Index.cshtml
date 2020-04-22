@@ -1,0 +1,31 @@
+﻿@model AdView
+    <div class="container">
+
+        @foreach (Ad a in Model.Ads)
+        {
+        <form method="post" action="/home/delete">
+            <div class=" well col-md-6 col-md-offset-3">
+                <div class="row">
+                    @a.Title
+                </div>
+                <div class="row" style="margin-top:15px">
+                    @a.Description
+                </div>
+                <div class="row" style="margin-top:15px">
+                    @a.Number
+                </div>
+                <div class="row" style="margin-top:15px">
+                    @if (a.UserId == Model.Id)
+                    {
+                        <input type="hidden" name="id" value="@a.Id" />
+                        <Button class="btn btn-danger">Delete</Button>
+                    }
+                </div>
+
+            </div>
+        </form>
+        }
+ </div>
+
+
+
